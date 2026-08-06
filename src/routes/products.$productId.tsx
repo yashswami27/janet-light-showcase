@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
-import { categories, products } from "@/data/products";
+import { categories, products, type Category } from "@/data/products";
 import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
 
 export const Route = createFileRoute("/products/$productId")({
@@ -42,7 +42,7 @@ function ProductNotFound() {
 
 function ProductDetail() {
   const { product } = Route.useLoaderData();
-  const category = categories.find((c: (typeof categories)[number]) => c.id === product.category);
+  const category = categories.find((c: Category) => c.id === product.category);
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 3);
 
   return (
