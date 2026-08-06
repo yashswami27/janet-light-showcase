@@ -42,7 +42,7 @@ function ProductNotFound() {
 
 function ProductDetail() {
   const { product } = Route.useLoaderData();
-  const category = categories.find((c: { id: string }) => c.id === product.category);
+  const category = categories.find((c: (typeof categories)[number]) => c.id === product.category);
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 3);
 
   return (
