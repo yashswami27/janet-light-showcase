@@ -79,14 +79,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Janet Innovative Lights | Jay Enterprise, Ahmedabad" },
+      {
+        name: "description",
+        content:
+          "Janet Innovative Lights by Jay Enterprise, Ahmedabad — professional LED down lights, spot lights, track, panel and outdoor lighting since 2013.",
+      },
+      { name: "author", content: "Jay Enterprise" },
+      { property: "og:title", content: "Janet Innovative Lights | Jay Enterprise, Ahmedabad" },
+      {
+        property: "og:description",
+        content: "Professional LED lighting from Ahmedabad — browse the full Janet 2026 catalog.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
