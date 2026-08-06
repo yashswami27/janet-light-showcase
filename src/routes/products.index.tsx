@@ -50,7 +50,14 @@ function ProductsPage() {
   }, [activeCategory, query]);
 
   const setCategory = (id: string) =>
-    navigate({ search: (prev: ProductSearch) => (id === "all" ? { ...prev, category: undefined } : { ...prev, category: id }) });
+    navigate({
+      search: (prev: ProductSearch): ProductSearch => {
+        const next: ProductSearch = {};
+        if (prev.q) next.q = prev.q;
+        if (id !== "all") next.category = id;
+        return next;
+      },
+    });
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
