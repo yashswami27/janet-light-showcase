@@ -888,3 +888,4 @@ export const products: Product[] = [
     variants: [["3W", "Gold", "35MM x 21MM", "3K", "IP20", "BRIDGELUX"]],
     tags: [],
   },
+];
