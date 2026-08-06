@@ -91,7 +91,7 @@ function ProductDetail() {
               <caption className="sr-only">Technical specifications for {product.name}</caption>
               <thead className="bg-surface">
                 <tr>
-                  {product.specColumns.map((c) => (
+                  {product.specColumns.map((c: string) => (
                     <th key={c} scope="col" className="whitespace-nowrap px-4 py-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                       {c}
                     </th>
