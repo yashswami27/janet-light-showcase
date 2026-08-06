@@ -6,7 +6,7 @@ import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
 
 type ProductSearch = { category?: string; q?: string };
 
-export const Route = createFileRoute("/products")({
+export const Route = createFileRoute("/products/")({
   validateSearch: (search: Record<string, unknown>): ProductSearch => ({
     category: typeof search.category === "string" ? search.category : undefined,
     q: typeof search.q === "string" ? search.q : undefined,
