@@ -7,10 +7,12 @@ import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
 type ProductSearch = { category?: string; q?: string };
 
 export const Route = createFileRoute("/products/")({
-  validateSearch: (search: Record<string, unknown>): ProductSearch => ({
-    category: typeof search.category === "string" ? search.category : undefined,
-    q: typeof search.q === "string" ? search.q : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): ProductSearch => {
+    const out: ProductSearch = {};
+    if (typeof search["category"] === "string") out.category = search["category"];
+    if (typeof search["q"] === "string") out.q = search["q"];
+    return out;
+  },
   head: () => ({
     meta: [
       { title: "LED Lighting Products | Janet Innovative Lights, Ahmedabad" },
@@ -48,7 +50,7 @@ function ProductsPage() {
   }, [activeCategory, query]);
 
   const setCategory = (id: string) =>
-    navigate({ search: (prev) => ({ ...prev, category: id === "all" ? undefined : id }) });
+    navigate({ search: (prev: ProductSearch) => (id === "all" ? { ...prev, category: undefined } : { ...prev, category: id }) });
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">

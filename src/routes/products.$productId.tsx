@@ -42,7 +42,7 @@ function ProductNotFound() {
 
 function ProductDetail() {
   const { product } = Route.useLoaderData();
-  const category = categories.find((c) => c.id === product.category);
+  const category = categories.find((c: { id: string }) => c.id === product.category);
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 3);
 
   return (
@@ -76,7 +76,7 @@ function ProductDetail() {
 
           {product.tags.length > 0 && (
             <div className="mt-4 flex flex-wrap gap-2">
-              {product.tags.map((t) => (
+              {product.tags.map((t: string) => (
                 <span key={t} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium uppercase text-secondary-foreground">
                   {t}
                 </span>
@@ -99,9 +99,9 @@ function ProductDetail() {
                 </tr>
               </thead>
               <tbody>
-                {product.variants.map((row, i) => (
+                {product.variants.map((row: string[], i: number) => (
                   <tr key={i} className="border-t border-border">
-                    {product.specColumns.map((_, j) => (
+                    {product.specColumns.map((_: string, j: number) => (
                       <td key={j} className="whitespace-nowrap px-4 py-3 text-foreground">
                         {row[j] ?? "—"}
                       </td>

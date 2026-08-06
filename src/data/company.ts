@@ -38,7 +38,7 @@ export const company = {
 
   /** Google Maps embed URL (Share → Embed a map → copy the src="..." value) */
   mapEmbedUrl: "",
-} as const;
+};
 
 export const hasContact = {
   get address() {
