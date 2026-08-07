@@ -13,7 +13,23 @@ type Ctx = {
   setOpen: (v: boolean) => void;
 };
 
-const EnquiryCartContext = createContext<Ctx | null>(null);
+const noop = () => {};
+const fallbackCtx: Ctx = {
+  items: [],
+  add: noop,
+  remove: noop,
+  toggle: noop,
+  clear: noop,
+  has: () => false,
+  open: false,
+  setOpen: noop,
+};
+
+const globalKey = "__janetEnquiryCartContext";
+const globalStore = globalThis as unknown as Record<string, unknown>;
+const EnquiryCartContext =
+  (globalStore[globalKey] as React.Context<Ctx> | undefined) ??
+  (globalStore[globalKey] = createContext<Ctx>(fallbackCtx));
 const STORAGE_KEY = "janet-enquiry-list";
 
 export function EnquiryCartProvider({ children }: { children: ReactNode }) {
@@ -67,7 +83,5 @@ export function EnquiryCartProvider({ children }: { children: ReactNode }) {
 }
 
 export function useEnquiryCart() {
-  const ctx = useContext(EnquiryCartContext);
-  if (!ctx) throw new Error("useEnquiryCart must be used inside EnquiryCartProvider");
-  return ctx;
+  return useContext(EnquiryCartContext);
 }
