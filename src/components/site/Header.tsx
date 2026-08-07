@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { company, hasContact, telLink, whatsappLink } from "@/data/company";
+import { EnquiryListTrigger } from "@/components/site/EnquiryList";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -39,6 +40,7 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
+          <EnquiryListTrigger />
           {hasContact.phone && (
             <a
               href={telLink()}
@@ -66,6 +68,9 @@ export function Header() {
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
+        <div className="md:hidden">
+          <EnquiryListTrigger className="ml-2" />
+        </div>
       </div>
 
       {open && (
