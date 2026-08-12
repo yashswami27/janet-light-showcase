@@ -50,7 +50,7 @@ function AboutPage() {
       <div className="mt-12 grid gap-10 lg:grid-cols-[1.2fr_1fr]">
         <div className="grid gap-6 sm:grid-cols-2">
           {values.map((v) => (
-            <div key={v.title} className="rounded-xl border border-border bg-card p-6 shadow-soft">
+            <div key={v.title} className="rounded-sm border border-border bg-card p-6 shadow-soft">
               <v.icon className="size-6 text-primary" aria-hidden />
               <h2 className="mt-4 text-base font-semibold">{v.title}</h2>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{v.text}</p>
@@ -63,11 +63,11 @@ function AboutPage() {
           loading="lazy"
           width={1200}
           height={900}
-          className="h-full w-full rounded-xl object-cover shadow-soft"
+          className="h-full w-full rounded-sm object-cover shadow-soft"
         />
       </div>
 
-      <div className="mt-14 grid gap-6 rounded-xl bg-gradient-brand p-8 text-primary-foreground sm:grid-cols-3">
+      <div className="mt-14 grid gap-6 rounded-sm bg-gradient-brand p-8 text-primary-foreground sm:grid-cols-3">
         <div>
           <p className="text-4xl font-semibold">{new Date().getFullYear() - company.establishedYear}+</p>
           <p className="mt-1 text-sm opacity-85">years in lighting</p>

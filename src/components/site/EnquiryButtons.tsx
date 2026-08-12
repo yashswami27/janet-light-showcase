@@ -33,7 +33,7 @@ export function EnquiryButtons({
           href={whatsappLink(message)}
           target="_blank"
           rel="noreferrer"
-          className={`inline-flex items-center gap-2 rounded-md bg-gradient-brand font-semibold text-primary-foreground shadow-soft transition-opacity hover:opacity-90 ${pad}`}
+          className={`inline-flex items-center gap-2 rounded-sm bg-gradient-brand font-semibold text-primary-foreground shadow-soft transition-opacity hover:opacity-90 ${pad}`}
         >
           <MessageCircle className="size-4" aria-hidden /> WhatsApp enquiry
         </a>
@@ -41,7 +41,7 @@ export function EnquiryButtons({
       {hasContact.email && (
         <a
           href={mailtoLink(`Enquiry: ${subject}`, message)}
-          className={`inline-flex items-center gap-2 rounded-md border border-border bg-background font-semibold text-foreground transition-colors hover:bg-secondary ${pad}`}
+          className={`inline-flex items-center gap-2 rounded-sm border border-border bg-background font-semibold text-foreground transition-colors hover:bg-secondary ${pad}`}
         >
           <Mail className="size-4" aria-hidden /> Email enquiry
         </a>
@@ -49,7 +49,7 @@ export function EnquiryButtons({
       {hasContact.phone && (
         <a
           href={telLink()}
-          className={`inline-flex items-center gap-2 rounded-md border border-border bg-background font-semibold text-foreground transition-colors hover:bg-secondary ${pad}`}
+          className={`inline-flex items-center gap-2 rounded-sm border border-border bg-background font-semibold text-foreground transition-colors hover:bg-secondary ${pad}`}
         >
           <Phone className="size-4" aria-hidden /> Call
         </a>

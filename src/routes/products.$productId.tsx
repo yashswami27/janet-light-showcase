@@ -52,7 +52,7 @@ function ProductDetail() {
       </Link>
 
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-xl border border-border bg-surface">
+        <div className="overflow-hidden rounded-sm border border-border bg-surface">
           <img
             src={pageImage(product.page)}
             alt={`Catalog page ${product.page} showing ${product.name}`}
@@ -86,7 +86,7 @@ function ProductDetail() {
 
           <EnquiryButtons subject={`${product.name}${product.model ? ` (${product.model})` : ""}`} className="mt-7" />
 
-          <div className="mt-9 overflow-x-auto rounded-xl border border-border">
+          <div className="mt-9 overflow-x-auto rounded-sm border border-border">
             <table className="w-full min-w-[520px] text-left text-sm">
               <caption className="sr-only">Technical specifications for {product.name}</caption>
               <thead className="bg-surface">
@@ -124,7 +124,7 @@ function ProductDetail() {
                 key={p.id}
                 to="/products/$productId"
                 params={{ productId: p.id }}
-                className="group overflow-hidden rounded-xl border border-border bg-card shadow-soft transition-shadow hover:shadow-lift"
+                className="group overflow-hidden rounded-sm border border-border bg-card shadow-soft transition-shadow hover:shadow-lift"
               >
                 <div className="aspect-4/3 overflow-hidden bg-surface">
                   <img src={pageImage(p.page)} alt={p.name} loading="lazy" className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />

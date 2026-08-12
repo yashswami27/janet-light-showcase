@@ -52,7 +52,7 @@ function ContactPage() {
       </header>
 
       <div className="mt-10 grid gap-10 lg:grid-cols-[1.1fr_1fr]">
-        <section className="rounded-xl border border-border bg-card p-6 shadow-soft sm:p-8">
+        <section className="rounded-sm border border-border bg-card p-6 shadow-soft sm:p-8">
           <h2 className="text-lg font-semibold">Send an enquiry</h2>
           <div className="mt-5 space-y-4">
             <div>
@@ -61,7 +61,7 @@ function ContactPage() {
                 id="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="mt-1.5 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                className="mt-1.5 w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
                 placeholder="e.g. Rahul Shah"
               />
             </div>
@@ -71,7 +71,7 @@ function ContactPage() {
                 id="interest"
                 value={interest}
                 onChange={(e) => setInterest(e.target.value)}
-                className="mt-1.5 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                className="mt-1.5 w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
               >
                 <option value="">Select a range (optional)</option>
                 {categories.map((c) => (
@@ -90,7 +90,7 @@ function ContactPage() {
                 rows={5}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                className="mt-1.5 w-full rounded-md border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
+                className="mt-1.5 w-full rounded-sm border border-input bg-background px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-ring"
                 placeholder="Quantities, wattage, finish, site location…"
               />
             </div>
@@ -102,7 +102,7 @@ function ContactPage() {
                 href={whatsappLink(composed)}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-md bg-gradient-brand px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 rounded-sm bg-gradient-brand px-5 py-3 text-sm font-semibold text-primary-foreground shadow-soft transition-opacity hover:opacity-90"
               >
                 <MessageCircle className="size-4" aria-hidden /> Send on WhatsApp
               </a>
@@ -110,13 +110,13 @@ function ContactPage() {
             {hasContact.email ? (
               <a
                 href={mailtoLink(interest ? `Enquiry: ${interest}` : "Product enquiry", composed)}
-                className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-secondary"
+                className="inline-flex items-center gap-2 rounded-sm border border-border px-5 py-3 text-sm font-semibold transition-colors hover:bg-secondary"
               >
                 <Send className="size-4" aria-hidden /> Send by email
               </a>
             ) : null}
             {!hasContact.whatsapp && !hasContact.email && (
-              <p className="rounded-md bg-secondary px-4 py-3 text-sm text-secondary-foreground">
+              <p className="rounded-sm bg-secondary px-4 py-3 text-sm text-secondary-foreground">
                 Our WhatsApp and email enquiry buttons will appear here as soon as the contact details are added.
               </p>
             )}
@@ -148,7 +148,7 @@ function ContactPage() {
           ) : (
             <div className="mt-5 space-y-4">
               {["Showroom address", "Phone / WhatsApp", "Email", "Opening hours"].map((label) => (
-                <div key={label} className="rounded-lg border border-dashed border-border p-4">
+                <div key={label} className="rounded-sm border border-dashed border-border p-4">
                   <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</p>
                   <p className="mt-1 text-sm text-muted-foreground">To be added</p>
                 </div>
@@ -160,7 +160,7 @@ function ContactPage() {
           )}
 
           {company.mapEmbedUrl && (
-            <div className="mt-8 overflow-hidden rounded-xl border border-border">
+            <div className="mt-8 overflow-hidden rounded-sm border border-border">
               <iframe
                 title={`Map to ${company.brand} showroom`}
                 src={company.mapEmbedUrl}

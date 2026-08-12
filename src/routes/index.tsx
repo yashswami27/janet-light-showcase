@@ -4,7 +4,6 @@ import {
   ShieldCheck,
   Zap,
   IndianRupee,
-  Sparkles,
   Lightbulb,
   Quote,
   BookOpen,
@@ -12,7 +11,6 @@ import {
   Truck,
   Star,
 } from "lucide-react";
-import heroImage from "@/assets/hero-lighting.jpg";
 import trackImage from "@/assets/showcase-track.jpg";
 import outdoorImage from "@/assets/showcase-outdoor.jpg";
 import { categories, products } from "@/data/products";
@@ -165,8 +163,8 @@ function HomePage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map((h, i) => (
             <Reveal key={h.title} delay={i * 90}>
-              <div className="card-hover h-full rounded-xl border border-border bg-card p-6 shadow-soft">
-                <span className="inline-grid size-11 place-items-center rounded-lg bg-gradient-brand text-primary-foreground">
+              <div className="card-hover h-full rounded-sm border border-border bg-card p-6 shadow-soft">
+                <span className="inline-grid size-11 place-items-center rounded-sm bg-gradient-brand text-primary-foreground">
                   <h.icon className="size-5" aria-hidden />
                 </span>
                 <h3 className="mt-4 text-base font-semibold text-card-foreground">{h.title}</h3>
@@ -181,7 +179,7 @@ function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <Reveal>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Browse the range</h2>
+            <h2 className="text-4xl font-light sm:text-5xl">Browse the range</h2>
             <p className="mt-2 max-w-xl text-sm text-muted-foreground">
               {categories.length} lighting families, {products.length} fittings — every product from our 2026
               catalog with full technical specifications.
@@ -198,7 +196,7 @@ function HomePage() {
               <Link
                 to="/products"
                 search={{ category: cat.id }}
-                className="group card-hover block h-full overflow-hidden rounded-xl border border-border bg-card shadow-soft"
+                className="group card-hover block h-full overflow-hidden rounded-sm border border-border bg-card shadow-soft"
               >
                 <div className="aspect-4/3 overflow-hidden bg-surface">
                   <img
@@ -235,7 +233,7 @@ function HomePage() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {applications.map((a, i) => (
               <Reveal key={a.title} delay={(i % 3) * 90}>
-                <article className="group relative h-full overflow-hidden rounded-xl border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur transition-colors hover:border-primary-foreground/35">
+                <article className="group relative h-full overflow-hidden rounded-sm border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur transition-colors hover:border-primary-foreground/35">
                   <div className="aspect-16/10 overflow-hidden">
                     <img
                       src={pageImage(a.page)}
@@ -265,7 +263,7 @@ function HomePage() {
               loading="lazy"
               width={1200}
               height={900}
-              className="h-64 w-full rounded-xl object-cover shadow-soft"
+              className="h-64 w-full rounded-sm object-cover shadow-soft"
             />
             <img
               src={outdoorImage}
@@ -273,14 +271,14 @@ function HomePage() {
               loading="lazy"
               width={1200}
               height={900}
-              className="mt-8 h-64 w-full rounded-xl object-cover shadow-soft"
+              className="mt-8 h-64 w-full rounded-sm object-cover shadow-soft"
             />
           </Reveal>
           <Reveal delay={120}>
             <span className="inline-flex items-center gap-2 rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wider text-secondary-foreground">
               <Lightbulb className="size-3.5" aria-hidden /> Our motto
             </span>
-            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-5 text-4xl font-light sm:text-5xl">
               Quality is our lifeline. Service is the reason we are here.
             </h2>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
@@ -297,7 +295,7 @@ function HomePage() {
       <section className="border-y border-border bg-surface py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">How an enquiry works</h2>
+            <h2 className="text-4xl font-light sm:text-5xl">How an enquiry works</h2>
             <p className="mt-3 max-w-xl text-sm text-muted-foreground">
               Four simple steps from your first message to fittings on site.
             </p>
@@ -305,7 +303,7 @@ function HomePage() {
           <ol className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((s, i) => (
               <Reveal key={s.title} delay={i * 90}>
-                <li className="relative h-full rounded-xl border border-border bg-card p-6 shadow-soft">
+                <li className="relative h-full rounded-sm border border-border bg-card p-6 shadow-soft">
                   <span className="font-display text-4xl font-semibold text-primary/15">0{i + 1}</span>
                   <s.icon className="mt-2 size-5 text-primary" aria-hidden />
                   <h3 className="mt-3 text-base font-semibold">{s.title}</h3>
@@ -320,12 +318,12 @@ function HomePage() {
       {/* ---------------- Testimonials ---------------- */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Trusted on site and on paper</h2>
+          <h2 className="text-4xl font-light sm:text-5xl">Trusted on site and on paper</h2>
         </Reveal>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} delay={i * 90}>
-              <figure className="card-hover h-full rounded-xl border border-border bg-card p-6 shadow-soft">
+              <figure className="card-hover h-full rounded-sm border border-border bg-card p-6 shadow-soft">
                 <Quote className="size-6 text-primary/40" aria-hidden />
                 <blockquote className="mt-4 text-sm leading-relaxed text-card-foreground">{t.quote}</blockquote>
                 <figcaption className="mt-5 border-t border-border pt-4 text-xs text-muted-foreground">
@@ -345,7 +343,7 @@ function HomePage() {
       {/* ---------------- FAQ ---------------- */}
       <section className="mx-auto max-w-3xl px-4 pb-20 sm:px-6 lg:px-8">
         <Reveal>
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">Frequently asked</h2>
+          <h2 className="text-4xl font-light sm:text-5xl">Frequently asked</h2>
         </Reveal>
         <Reveal delay={90}>
           <Accordion type="single" collapsible className="mt-8">
@@ -362,7 +360,7 @@ function HomePage() {
       {/* ---------------- CTA ---------------- */}
       <section className="mx-auto max-w-7xl px-4 pb-24 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="relative overflow-hidden rounded-2xl bg-gradient-brand px-6 py-14 text-center sm:px-12">
+          <div className="relative overflow-hidden rounded-sm bg-gradient-brand px-6 py-14 text-center sm:px-12">
             <div aria-hidden className="animate-float absolute -left-10 -top-10 size-52 rounded-full bg-primary-foreground/10 blur-2xl" />
             <h2 className="relative text-3xl font-semibold tracking-tight text-primary-foreground sm:text-4xl">
               Planning a space? Let's light it well.
@@ -373,13 +371,13 @@ function HomePage() {
             <div className="relative mt-8 flex flex-wrap justify-center gap-3">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-md bg-background px-6 py-3 text-sm font-semibold text-foreground shadow-lift transition-transform hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-sm bg-background px-6 py-3 text-sm font-semibold text-foreground shadow-lift transition-transform hover:-translate-y-0.5"
               >
                 Start an enquiry <ArrowRight className="size-4" aria-hidden />
               </Link>
               <Link
                 to="/products"
-                className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/40 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
+                className="inline-flex items-center gap-2 rounded-sm border border-primary-foreground/40 px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10"
               >
                 Build an enquiry list
               </Link>
