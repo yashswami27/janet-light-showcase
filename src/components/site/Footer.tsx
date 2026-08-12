@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone, MessageCircle, Instagram, Facebook, Clock } from "lucide-react";
 import { company, hasContact, mailtoLink, telLink, whatsappLink } from "@/data/company";
+import janetLogo from "@/assets/janet-logo.png.asset.json";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -9,10 +10,14 @@ export function Footer() {
     <footer className="mt-24 border-t border-border bg-surface">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3 lg:px-8">
         <div>
-          <span className="text-2xl font-semibold tracking-tight text-gradient-brand">janet</span>
-          <p className="mt-1 text-xs font-medium uppercase tracking-[0.28em] text-muted-foreground">
-            {company.tagline}
-          </p>
+          <img
+            src={janetLogo.url}
+            alt={`${company.brand} ${company.tagline} logo`}
+            className="h-14 w-auto"
+            width={240}
+            height={144}
+            loading="lazy"
+          />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
             A brand of {company.legalName}, {company.city}. Professional LED down lights, spot lights,
             track lights, panel lights and architectural lighting since {company.establishedYear}.
