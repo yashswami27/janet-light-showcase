@@ -278,7 +278,7 @@ function ProductsPage() {
                   </div>
                   <div className="mt-auto flex flex-wrap gap-2 pt-5">
                     <AddToEnquiry item={{ id: p.id, name: p.name, ...(p.model ? { model: p.model } : {}), page: p.page }} size="sm" />
-                    <EnquiryButtons subject={`${p.name}${p.model ? ` (${p.model})` : ""}`} size="sm" />
+                    <EnquiryButtons subject={`${p.name}${p.model ? ` (${p.model})` : ""}`} size="sm" hideWhenEmpty />
                   </div>
                 </div>
               </article>
