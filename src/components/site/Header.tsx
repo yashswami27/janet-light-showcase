@@ -3,6 +3,7 @@ import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { company, hasContact, telLink, whatsappLink } from "@/data/company";
 import { EnquiryListTrigger } from "@/components/site/EnquiryList";
+import janetLogo from "@/assets/janet-logo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -18,11 +19,14 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="text-2xl font-semibold tracking-tight text-gradient-brand">janet</span>
-          <span className="hidden text-[0.6rem] font-medium uppercase tracking-[0.28em] text-muted-foreground sm:inline">
-            {company.tagline}
-          </span>
+        <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
+          <img
+            src={janetLogo.url}
+            alt={`${company.brand} ${company.tagline} logo`}
+            className="h-10 w-auto sm:h-11"
+            width={200}
+            height={120}
+          />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
