@@ -9,16 +9,19 @@ export function EnquiryButtons({
   subject,
   className = "",
   size = "md",
+  hideWhenEmpty = false,
 }: {
   subject: string;
   className?: string;
   size?: "sm" | "md";
+  hideWhenEmpty?: boolean;
 }) {
   const message = `Hello ${company.brand}, I would like to enquire about: ${subject}`;
   const pad = size === "sm" ? "px-3 py-2 text-xs" : "px-5 py-3 text-sm";
   const anyChannel = hasContact.whatsapp || hasContact.email || hasContact.phone;
 
   if (!anyChannel) {
+    if (hideWhenEmpty) return null;
     return (
       <p className={`text-xs text-muted-foreground ${className}`}>
         Enquiry channels will appear here once contact details are added.
