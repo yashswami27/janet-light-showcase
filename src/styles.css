@@ -266,3 +266,29 @@
 @utility animate-slide-in-right {
   animation: janet-slide-in-right 0.28s cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+@keyframes janet-ken-burns {
+  from { transform: scale(1.06); }
+  to { transform: scale(1.14); }
+}
+
+@utility animate-ken-burns {
+  animation: janet-ken-burns 14s ease-out forwards;
+}
+
+@keyframes janet-fade-up {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+
+@utility animate-fade-up {
+  animation: janet-fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
