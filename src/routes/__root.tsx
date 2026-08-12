@@ -16,6 +16,7 @@ import { Footer } from "@/components/site/Footer";
 import { EnquiryCartProvider } from "@/lib/enquiry-cart";
 import { EnquiryListDrawer } from "@/components/site/EnquiryList";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
+import { FloatingActions } from "@/components/site/FloatingActions";
 import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
@@ -148,6 +149,7 @@ function RootComponent() {
           </main>
           <Footer />
           <EnquiryListDrawer />
+          <FloatingActions />
           <Toaster position="bottom-center" />
         </div>
       </EnquiryCartProvider>
