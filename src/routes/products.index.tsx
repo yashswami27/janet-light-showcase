@@ -111,7 +111,7 @@ function ProductsPage() {
         </p>
       </header>
 
-      <div className="sticky top-16 z-30 -mx-4 mt-8 border-y border-border bg-background/90 px-4 py-4 backdrop-blur sm:mx-0 sm:rounded-xl sm:border sm:px-5">
+      <div className="sticky top-16 z-30 -mx-4 mt-8 border-y border-border bg-background/90 px-4 py-4 backdrop-blur sm:mx-0 sm:rounded-sm sm:border sm:px-5">
         <label className="relative block">
           <Search className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" aria-hidden />
           <span className="sr-only">Search products</span>
@@ -119,7 +119,7 @@ function ProductsPage() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search by name, model, wattage or finish…"
-            className="w-full rounded-md border border-input bg-background py-2.5 pl-10 pr-10 text-sm outline-none focus:ring-2 focus:ring-ring"
+            className="w-full rounded-sm border border-input bg-background py-2.5 pl-10 pr-10 text-sm outline-none focus:ring-2 focus:ring-ring"
           />
           {query && (
             <button
@@ -157,7 +157,7 @@ function ProductsPage() {
             id="watt"
             value={watt}
             onChange={(e) => setWatt(e.target.value)}
-            className="rounded-md border border-input bg-background px-3 py-1.5 text-xs font-medium outline-none focus:ring-2 focus:ring-ring"
+            className="rounded-sm border border-input bg-background px-3 py-1.5 text-xs font-medium outline-none focus:ring-2 focus:ring-ring"
           >
             {wattBands.map((b) => (
               <option key={b.id} value={b.id}>{b.label}</option>
@@ -169,7 +169,7 @@ function ProductsPage() {
             id="sort"
             value={sort}
             onChange={(e) => setSort(e.target.value)}
-            className="rounded-md border border-input bg-background px-3 py-1.5 text-xs font-medium outline-none focus:ring-2 focus:ring-ring"
+            className="rounded-sm border border-input bg-background px-3 py-1.5 text-xs font-medium outline-none focus:ring-2 focus:ring-ring"
           >
             {sorts.map((s) => (
               <option key={s.id} value={s.id}>{s.label}</option>
@@ -180,13 +180,13 @@ function ProductsPage() {
             <button
               type="button"
               onClick={resetAll}
-              className="rounded-md px-3 py-1.5 text-xs font-semibold text-primary hover:bg-secondary"
+              className="rounded-sm px-3 py-1.5 text-xs font-semibold text-primary hover:bg-secondary"
             >
               Reset filters
             </button>
           )}
 
-          <div className="ml-auto hidden items-center gap-1 rounded-md border border-border p-0.5 sm:flex">
+          <div className="ml-auto hidden items-center gap-1 rounded-sm border border-border p-0.5 sm:flex">
             <button
               type="button"
               onClick={() => setView("grid")}
@@ -214,7 +214,7 @@ function ProductsPage() {
       </p>
 
       {filtered.length === 0 ? (
-        <div className="mt-10 rounded-xl border border-dashed border-border p-10 text-center">
+        <div className="mt-10 rounded-sm border border-dashed border-border p-10 text-center">
           <p className="text-sm text-muted-foreground">
             No products match that search. Try a wattage like “12W”, a name like “COB”, or reset the filters.
           </p>
@@ -227,7 +227,7 @@ function ProductsPage() {
           {filtered.map((p, i) => (
             <Reveal key={p.id} delay={Math.min(i, 6) * 60} className="h-full">
               <article
-                className={`card-hover group flex h-full overflow-hidden rounded-xl border border-border bg-card shadow-soft ${
+                className={`card-hover group flex h-full overflow-hidden rounded-sm border border-border bg-card shadow-soft ${
                   view === "grid" ? "flex-col" : "flex-col sm:flex-row"
                 }`}
               >
@@ -245,7 +245,7 @@ function ProductsPage() {
                   <button
                     type="button"
                     onClick={() => setQuick(p)}
-                    className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-md bg-background/90 px-3 py-1.5 text-xs font-semibold text-foreground opacity-0 shadow-soft backdrop-blur transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
+                    className="absolute right-3 top-3 inline-flex items-center gap-1.5 rounded-sm bg-background/90 px-3 py-1.5 text-xs font-semibold text-foreground opacity-0 shadow-soft backdrop-blur transition-opacity group-hover:opacity-100 focus-visible:opacity-100"
                   >
                     <Eye className="size-3.5" aria-hidden /> Quick view
                   </button>
@@ -278,7 +278,7 @@ function ProductsPage() {
                   </div>
                   <div className="mt-auto flex flex-wrap gap-2 pt-5">
                     <AddToEnquiry item={{ id: p.id, name: p.name, ...(p.model ? { model: p.model } : {}), page: p.page }} size="sm" />
-                    <EnquiryButtons subject={`${p.name}${p.model ? ` (${p.model})` : ""}`} size="sm" />
+                    <EnquiryButtons subject={`${p.name}${p.model ? ` (${p.model})` : ""}`} size="sm" hideWhenEmpty />
                   </div>
                 </div>
               </article>
@@ -299,13 +299,13 @@ function ProductsPage() {
             role="dialog"
             aria-modal="true"
             aria-label={`${quick.name} quick view`}
-            className="relative max-h-[85vh] w-full max-w-3xl overflow-y-auto rounded-2xl border border-border bg-background shadow-lift"
+            className="relative max-h-[85vh] w-full max-w-3xl overflow-y-auto rounded-sm border border-border bg-background shadow-lift"
           >
             <button
               type="button"
               onClick={() => setQuick(null)}
               aria-label="Close"
-              className="absolute right-3 top-3 rounded-md bg-background/80 p-2 text-muted-foreground backdrop-blur hover:bg-secondary"
+              className="absolute right-3 top-3 rounded-sm bg-background/80 p-2 text-muted-foreground backdrop-blur hover:bg-secondary"
             >
               <X className="size-5" />
             </button>
@@ -313,13 +313,13 @@ function ProductsPage() {
               <img
                 src={pageImage(quick.page)}
                 alt={`${quick.name} catalog page`}
-                className="w-full rounded-xl border border-border object-cover object-top"
+                className="w-full rounded-sm border border-border object-cover object-top"
               />
               <div>
                 <h2 className="text-xl font-semibold">{quick.name}</h2>
                 {quick.model && <p className="mt-1 text-xs text-muted-foreground">Model {quick.model}</p>}
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{quick.description}</p>
-                <div className="mt-4 overflow-x-auto rounded-lg border border-border">
+                <div className="mt-4 overflow-x-auto rounded-sm border border-border">
                   <table className="w-full text-left text-xs">
                     <thead className="bg-surface">
                       <tr>
@@ -346,7 +346,7 @@ function ProductsPage() {
                   <Link
                     to="/products/$productId"
                     params={{ productId: quick.id }}
-                    className="inline-flex items-center gap-2 rounded-md bg-gradient-brand px-4 py-2 text-xs font-semibold text-primary-foreground"
+                    className="inline-flex items-center gap-2 rounded-sm bg-gradient-brand px-4 py-2 text-xs font-semibold text-primary-foreground"
                   >
                     Full details
                   </Link>

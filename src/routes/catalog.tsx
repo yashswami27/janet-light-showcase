@@ -33,7 +33,7 @@ function CatalogPage() {
         </p>
       </header>
 
-      <div className="mt-8 overflow-hidden rounded-xl border border-border bg-surface">
+      <div className="mt-8 overflow-hidden rounded-sm border border-border bg-surface">
         <img
           src={pageImage(page)}
           alt={`Janet catalog page ${page} of ${TOTAL_PAGES}`}
@@ -46,7 +46,7 @@ function CatalogPage() {
           type="button"
           onClick={() => setPage((p) => Math.max(1, p - 1))}
           disabled={page === 1}
-          className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-medium disabled:opacity-40"
+          className="inline-flex items-center gap-2 rounded-sm border border-border px-4 py-2 text-sm font-medium disabled:opacity-40"
         >
           <ChevronLeft className="size-4" aria-hidden /> Previous
         </button>
@@ -57,7 +57,7 @@ function CatalogPage() {
           type="button"
           onClick={() => setPage((p) => Math.min(TOTAL_PAGES, p + 1))}
           disabled={page === TOTAL_PAGES}
-          className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm font-medium disabled:opacity-40"
+          className="inline-flex items-center gap-2 rounded-sm border border-border px-4 py-2 text-sm font-medium disabled:opacity-40"
         >
           Next <ChevronRight className="size-4" aria-hidden />
         </button>
@@ -71,7 +71,7 @@ function CatalogPage() {
             onClick={() => setPage(n)}
             aria-label={`Go to catalog page ${n}`}
             aria-current={page === n}
-            className={`overflow-hidden rounded-md border transition-colors ${
+            className={`overflow-hidden rounded-sm border transition-colors ${
               page === n ? "border-primary ring-2 ring-ring" : "border-border hover:border-primary"
             }`}
           >
@@ -80,7 +80,7 @@ function CatalogPage() {
         ))}
       </div>
 
-      <div className="mt-12 rounded-xl border border-border bg-card p-6 shadow-soft">
+      <div className="mt-12 rounded-sm border border-border bg-card p-6 shadow-soft">
         <h2 className="flex items-center gap-2 text-lg font-semibold">
           <Download className="size-5 text-primary" aria-hidden /> Need the PDF or a price list?
         </h2>

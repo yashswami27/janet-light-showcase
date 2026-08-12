@@ -20,7 +20,7 @@ export function AddToEnquiry({ item, size = "md" }: { item: EnquiryItem; size?: 
         );
       }}
       aria-pressed={active}
-      className={`inline-flex items-center gap-2 rounded-md border font-semibold transition-colors ${pad} ${
+      className={`inline-flex items-center gap-2 rounded-sm border font-semibold transition-colors ${pad} ${
         active
           ? "border-primary/40 bg-primary/10 text-primary"
           : "border-border bg-background text-foreground hover:bg-secondary"
@@ -39,7 +39,7 @@ export function EnquiryListTrigger({ className = "" }: { className?: string }) {
       type="button"
       onClick={() => setOpen(true)}
       aria-label={`Open enquiry list (${items.length} items)`}
-      className={`relative inline-flex items-center gap-2 rounded-md border border-border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary ${className}`}
+      className={`relative inline-flex items-center gap-2 rounded-sm border border-border px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary ${className}`}
     >
       <ClipboardList className="size-4" aria-hidden />
       <span className="hidden lg:inline">Enquiry list</span>
@@ -89,7 +89,7 @@ export function EnquiryListDrawer() {
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
-                className="rounded-md p-2 text-muted-foreground hover:bg-secondary"
+                className="rounded-sm p-2 text-muted-foreground hover:bg-secondary"
               >
                 <X className="size-5" />
               </button>
@@ -97,7 +97,7 @@ export function EnquiryListDrawer() {
 
             <div className="flex-1 overflow-y-auto px-5 py-4">
               {items.length === 0 ? (
-                <div className="rounded-xl border border-dashed border-border p-8 text-center">
+                <div className="rounded-sm border border-dashed border-border p-8 text-center">
                   <p className="text-sm text-muted-foreground">
                     Your list is empty. Add fittings from the products page and send them all in one enquiry.
                   </p>
@@ -112,7 +112,7 @@ export function EnquiryListDrawer() {
               ) : (
                 <ul className="space-y-3">
                   {items.map((i) => (
-                    <li key={i.id} className="flex gap-3 rounded-lg border border-border p-3">
+                    <li key={i.id} className="flex gap-3 rounded-sm border border-border p-3">
                       <img
                         src={pageImage(i.page)}
                         alt=""
@@ -152,7 +152,7 @@ export function EnquiryListDrawer() {
                     href={whatsappLink(message)}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex w-full items-center justify-center gap-2 rounded-md bg-gradient-brand px-4 py-3 text-sm font-semibold text-primary-foreground"
+                    className="flex w-full items-center justify-center gap-2 rounded-sm bg-gradient-brand px-4 py-3 text-sm font-semibold text-primary-foreground"
                   >
                     <MessageCircle className="size-4" aria-hidden /> Send list on WhatsApp
                   </a>
@@ -160,7 +160,7 @@ export function EnquiryListDrawer() {
                 {hasContact.email && (
                   <a
                     href={mailtoLink("Quotation request", message)}
-                    className="flex w-full items-center justify-center gap-2 rounded-md border border-border px-4 py-3 text-sm font-semibold"
+                    className="flex w-full items-center justify-center gap-2 rounded-sm border border-border px-4 py-3 text-sm font-semibold"
                   >
                     <Mail className="size-4" aria-hidden /> Email the list
                   </a>
@@ -172,7 +172,7 @@ export function EnquiryListDrawer() {
                       void navigator.clipboard?.writeText(message);
                       toast.success("Enquiry list copied to clipboard");
                     }}
-                    className="flex w-full items-center justify-center gap-2 rounded-md bg-gradient-brand px-4 py-3 text-sm font-semibold text-primary-foreground"
+                    className="flex w-full items-center justify-center gap-2 rounded-sm bg-gradient-brand px-4 py-3 text-sm font-semibold text-primary-foreground"
                   >
                     Copy list to clipboard
                   </button>
@@ -180,7 +180,7 @@ export function EnquiryListDrawer() {
                 <button
                   type="button"
                   onClick={clear}
-                  className="w-full rounded-md px-4 py-2 text-xs font-medium text-muted-foreground hover:bg-secondary"
+                  className="w-full rounded-sm px-4 py-2 text-xs font-medium text-muted-foreground hover:bg-secondary"
                 >
                   Clear list
                 </button>
