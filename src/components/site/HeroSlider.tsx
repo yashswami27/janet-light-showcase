@@ -29,7 +29,8 @@ export function HeroSlider({ slides }: { slides?: Slide[] }) {
     return () => clearInterval(id);
   }, [items.length]);
 
-  if (items.length === 0) return null;
+  const active = items[index] ?? items[0];
+  if (!active) return null;
 
   return (
     <section className="relative isolate h-[78vh] min-h-[520px] w-full overflow-hidden bg-brand-deep">
@@ -53,29 +54,29 @@ export function HeroSlider({ slides }: { slides?: Slide[] }) {
 
       <div className="relative mx-auto flex h-full max-w-4xl flex-col items-center justify-center px-6 text-center">
         <p key={`e${index}`} className="eyebrow animate-fade-up text-primary-foreground/70">
-          {items[index].eyebrow}
+          {active.eyebrow}
         </p>
         <h1
           key={`t${index}`}
           className="animate-fade-up mt-5 text-4xl font-light leading-[1.05] text-primary-foreground sm:text-6xl lg:text-7xl"
           style={{ animationDelay: "80ms" }}
         >
-          {items[index].title}
+          {active.title}
         </h1>
         <p
           key={`s${index}`}
           className="animate-fade-up mt-5 max-w-xl text-base italic text-primary-foreground/80 sm:text-lg"
           style={{ animationDelay: "160ms" }}
         >
-          {items[index].subtitle}
+          {active.subtitle}
         </p>
         <Link
           key={`c${index}`}
-          to={items[index].cta.to}
+          to={active.cta.to}
           className="animate-fade-up mt-9 inline-flex items-center gap-2 rounded-sm bg-primary-foreground px-8 py-4 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-brand-deep transition-transform hover:-translate-y-0.5"
           style={{ animationDelay: "240ms" }}
         >
-          {items[index].cta.label} <ArrowRight className="size-3.5" aria-hidden />
+          {active.cta.label} <ArrowRight className="size-3.5" aria-hidden />
         </Link>
       </div>
 
