@@ -3,6 +3,7 @@ import {
   ArrowRight,
   ShieldCheck,
   Zap,
+  Sparkles,
   IndianRupee,
   Lightbulb,
   Quote,
