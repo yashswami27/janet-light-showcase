@@ -19,6 +19,7 @@ import { categories, products } from "@/data/products";
 import { company } from "@/data/company";
 import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
 import { Reveal, CountUp } from "@/components/site/Reveal";
+import { HeroSlider, defaultSlides } from "@/components/site/HeroSlider";
 import {
   Accordion,
   AccordionContent,
@@ -120,76 +121,29 @@ function HomePage() {
 
   return (
     <>
-      {/* ---------------- Hero ---------------- */}
-      <section className="relative isolate overflow-hidden">
-        <img
-          src={heroImage}
-          alt="Modern interior illuminated with Janet LED track and profile lighting"
-          width={1920}
-          height={1088}
-          className="absolute inset-0 size-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-deep/95 via-brand-deep/80 to-brand-deep/25" />
-        <div
-          aria-hidden
-          className="animate-pulse-glow absolute -right-24 top-1/4 size-96 rounded-full bg-brand-glow/25 blur-3xl"
-        />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
-          <Reveal>
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-1.5 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-primary-foreground/90 backdrop-blur">
-              <Sparkles className="size-3.5" aria-hidden />
-              {company.legalName} · {company.city} · Since {company.establishedYear}
-            </p>
-          </Reveal>
-          <Reveal delay={80}>
-            <h1 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.05] tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
-              Light that shapes the way a space <span className="text-brand-glow">feels</span>.
-            </h1>
-          </Reveal>
-          <Reveal delay={160}>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85 sm:text-lg">
-              Janet is an efficient solution for all light fixtures under one roof — professional LED down
-              lights, spot lights, magnetic track systems, panels and architectural outdoor lighting.
-            </p>
-          </Reveal>
-          <Reveal delay={240}>
-            <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to="/products"
-                className="inline-flex items-center gap-2 rounded-md bg-background px-6 py-3 text-sm font-semibold text-foreground shadow-lift transition-transform hover:-translate-y-0.5"
-              >
-                Explore {products.length}+ products <ArrowRight className="size-4" aria-hidden />
-              </Link>
-              <Link
-                to="/catalog"
-                className="inline-flex items-center gap-2 rounded-md border border-primary-foreground/40 px-6 py-3 text-sm font-semibold text-primary-foreground backdrop-blur transition-colors hover:bg-primary-foreground/10"
-              >
-                <BookOpen className="size-4" aria-hidden /> View the 2026 catalog
-              </Link>
-            </div>
-          </Reveal>
+      {/* ---------------- Hero slider ---------------- */}
+      <HeroSlider slides={defaultSlides} />
 
-          <Reveal delay={320}>
-            <dl className="mt-14 grid max-w-2xl grid-cols-2 gap-6 border-t border-primary-foreground/20 pt-8 sm:grid-cols-4">
-              {[
-                { label: "Years in lighting", value: new Date().getFullYear() - company.establishedYear, suffix: "+" },
-                { label: "Fittings in range", value: products.length, suffix: "+" },
-                { label: "Product families", value: categories.length, suffix: "" },
-                { label: "Year warranty", value: 2, suffix: "" },
-              ].map((s) => (
-                <div key={s.label}>
-                  <dt className="sr-only">{s.label}</dt>
-                  <dd className="font-display text-3xl font-semibold text-primary-foreground">
-                    <CountUp to={s.value} suffix={s.suffix} />
-                  </dd>
-                  <p className="mt-1 text-[0.7rem] font-medium uppercase tracking-widest text-primary-foreground/70">
-                    {s.label}
-                  </p>
-                </div>
-              ))}
-            </dl>
-          </Reveal>
-        </div>
+      {/* ---------------- Stats band ---------------- */}
+      <section className="border-b border-border bg-background">
+        <dl className="mx-auto grid max-w-7xl grid-cols-2 gap-y-10 px-4 py-14 sm:px-6 lg:grid-cols-4 lg:px-8">
+          {[
+            { label: "Years in lighting", value: new Date().getFullYear() - company.establishedYear, suffix: "+" },
+            { label: "Fittings in range", value: products.length, suffix: "+" },
+            { label: "Product families", value: categories.length, suffix: "" },
+            { label: "Year warranty", value: 2, suffix: "" },
+          ].map((s, i) => (
+            <Reveal key={s.label} delay={i * 90}>
+              <div className="text-center">
+                <dt className="sr-only">{s.label}</dt>
+                <dd className="font-display text-5xl font-light text-foreground">
+                  <CountUp to={s.value} suffix={s.suffix} />
+                </dd>
+                <p className="eyebrow mt-3 text-muted-foreground">{s.label}</p>
+              </div>
+            </Reveal>
+          ))}
+        </dl>
       </section>
 
       {/* ---------------- Chip brand marquee ---------------- */}
