@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import trackImage from "@/assets/showcase-track.jpg";
 import outdoorImage from "@/assets/showcase-outdoor.jpg";
-import { categories, products } from "@/data/products";
+import { categories, products, categoryImage } from "@/data/products";
 import { company } from "@/data/company";
 import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
 import { Reveal, CountUp } from "@/components/site/Reveal";
