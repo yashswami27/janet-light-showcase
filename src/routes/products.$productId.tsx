@@ -89,7 +89,7 @@ function ProductDetail() {
             <div className="mt-4 flex flex-wrap gap-2">
               {product.tags.map((t: string) => (
                 <span key={t} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium uppercase text-secondary-foreground">
-                  {t}
+                  {t.replace(/-/g, " ")}
                 </span>
               ))}
             </div>
