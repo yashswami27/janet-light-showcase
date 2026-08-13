@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone, MessageCircle, Instagram, Facebook, Clock, ArrowRight } from "lucide-react";
 import { company, hasContact, mailtoLink, telLink, whatsappLink } from "@/data/company";
 import { categories } from "@/data/products";
-import janetLogo from "@/assets/janet-logo.png.asset.json";
+import janetLogo from "@/assets/janet-logo-dark.png.asset.json";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -40,7 +40,7 @@ export function Footer() {
           <img
             src={janetLogo.url}
             alt={`${company.brand} ${company.tagline} logo`}
-            className="h-14 w-auto brightness-0 invert"
+            className="h-14 w-auto"
             width={240}
             height={144}
             loading="lazy"

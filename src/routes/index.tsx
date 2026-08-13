@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import trackImage from "@/assets/showcase-track.jpg";
 import outdoorImage from "@/assets/showcase-outdoor.jpg";
-import { categories, products } from "@/data/products";
+import { categories, products, categoryImage } from "@/data/products";
 import { company } from "@/data/company";
 import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
 import { Reveal, CountUp } from "@/components/site/Reveal";
@@ -201,10 +201,10 @@ function HomePage() {
               >
                 <div className="aspect-4/3 overflow-hidden bg-surface">
                   <img
-                    src={pageImage(cat.pages[0] ?? 3)}
+                    src={categoryImage(cat.id)}
                     alt={`${cat.name} page from the Janet catalog`}
                     loading="lazy"
-                    className="size-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                    className="size-full bg-gradient-night object-contain p-6 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-5">

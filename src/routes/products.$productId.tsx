@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
-import { categories, products, type Category } from "@/data/products";
-import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
+import { categories, products, productImage, type Category } from "@/data/products";
+import { EnquiryButtons } from "@/components/site/EnquiryButtons";
 
 export const Route = createFileRoute("/products/$productId")({
   loader: ({ params }) => {
@@ -52,12 +52,23 @@ function ProductDetail() {
       </Link>
 
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
-        <div className="overflow-hidden rounded-sm border border-border bg-surface">
-          <img
-            src={pageImage(product.page)}
-            alt={`Catalog page ${product.page} showing ${product.name}`}
-            className="w-full object-cover"
-          />
+        <div>
+          <div className="overflow-hidden rounded-sm border border-border bg-gradient-night">
+            <img
+              src={productImage(product)}
+              alt={`${product.name}${product.model ? ` ${product.model}` : ""}`}
+              className="aspect-4/3 w-full object-contain p-8"
+            />
+          </div>
+          {product.images.length > 1 && (
+            <div className="mt-3 grid grid-cols-4 gap-3">
+              {product.images.slice(1, 5).map((src: string) => (
+                <div key={src} className="overflow-hidden rounded-sm border border-border bg-gradient-night">
+                  <img src={src} alt={product.name} loading="lazy" className="aspect-square w-full object-contain p-2" />
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div>
@@ -78,7 +89,7 @@ function ProductDetail() {
             <div className="mt-4 flex flex-wrap gap-2">
               {product.tags.map((t: string) => (
                 <span key={t} className="rounded-full bg-secondary px-3 py-1 text-xs font-medium uppercase text-secondary-foreground">
-                  {t}
+                  {t.replace(/-/g, " ")}
                 </span>
               ))}
             </div>
@@ -111,7 +122,10 @@ function ProductDetail() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs text-muted-foreground">Catalog page {product.page} · Specifications may change without notice.</p>
+          {product.specHeader && (
+            <p className="mt-3 text-xs text-muted-foreground">Catalog columns: {product.specHeader}</p>
+          )}
+          <p className="mt-2 text-xs text-muted-foreground">Catalog page {product.page} · Specifications may change without notice.</p>
         </div>
       </div>
 
@@ -126,8 +140,8 @@ function ProductDetail() {
                 params={{ productId: p.id }}
                 className="group overflow-hidden rounded-sm border border-border bg-card shadow-soft transition-shadow hover:shadow-lift"
               >
-                <div className="aspect-4/3 overflow-hidden bg-surface">
-                  <img src={pageImage(p.page)} alt={p.name} loading="lazy" className="size-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
+                <div className="aspect-4/3 overflow-hidden bg-gradient-night">
+                  <img src={productImage(p)} alt={p.name} loading="lazy" className="size-full object-contain p-4 transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-4">
                   <h3 className="text-sm font-semibold group-hover:text-primary">{p.name}</h3>
