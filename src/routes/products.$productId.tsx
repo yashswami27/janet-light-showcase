@@ -122,7 +122,10 @@ function ProductDetail() {
               </tbody>
             </table>
           </div>
-          <p className="mt-3 text-xs text-muted-foreground">Catalog page {product.page} · Specifications may change without notice.</p>
+          {product.specHeader && (
+            <p className="mt-3 text-xs text-muted-foreground">Catalog columns: {product.specHeader}</p>
+          )}
+          <p className="mt-2 text-xs text-muted-foreground">Catalog page {product.page} · Specifications may change without notice.</p>
         </div>
       </div>
 
