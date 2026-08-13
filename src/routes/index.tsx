@@ -204,7 +204,7 @@ function HomePage() {
                     src={categoryImage(cat.id)}
                     alt={`${cat.name} page from the Janet catalog`}
                     loading="lazy"
-                    className="size-full bg-surface object-contain p-6 transition-transform duration-700 group-hover:scale-105"
+                    className="size-full bg-gradient-night object-contain p-6 transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
                 <div className="p-5">

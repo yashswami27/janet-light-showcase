@@ -53,7 +53,7 @@ function ProductDetail() {
 
       <div className="mt-6 grid gap-10 lg:grid-cols-2">
         <div>
-          <div className="overflow-hidden rounded-sm border border-border bg-surface">
+          <div className="overflow-hidden rounded-sm border border-border bg-gradient-night">
             <img
               src={productImage(product)}
               alt={`${product.name}${product.model ? ` ${product.model}` : ""}`}
@@ -63,7 +63,7 @@ function ProductDetail() {
           {product.images.length > 1 && (
             <div className="mt-3 grid grid-cols-4 gap-3">
               {product.images.slice(1, 5).map((src: string) => (
-                <div key={src} className="overflow-hidden rounded-sm border border-border bg-surface">
+                <div key={src} className="overflow-hidden rounded-sm border border-border bg-gradient-night">
                   <img src={src} alt={product.name} loading="lazy" className="aspect-square w-full object-contain p-2" />
                 </div>
               ))}
@@ -140,7 +140,7 @@ function ProductDetail() {
                 params={{ productId: p.id }}
                 className="group overflow-hidden rounded-sm border border-border bg-card shadow-soft transition-shadow hover:shadow-lift"
               >
-                <div className="aspect-4/3 overflow-hidden bg-surface">
+                <div className="aspect-4/3 overflow-hidden bg-gradient-night">
                   <img src={productImage(p)} alt={p.name} loading="lazy" className="size-full object-contain p-4 transition-transform duration-500 group-hover:scale-105" />
                 </div>
                 <div className="p-4">

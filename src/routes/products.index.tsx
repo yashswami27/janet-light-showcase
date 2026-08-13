@@ -233,12 +233,12 @@ function ProductsPage() {
               >
                 <div className={view === "grid" ? "relative" : "relative sm:w-64 sm:shrink-0"}>
                   <Link to="/products/$productId" params={{ productId: p.id }} className="block">
-                    <div className={`overflow-hidden bg-surface ${view === "grid" ? "aspect-4/3" : "h-44 sm:h-full"}`}>
+                    <div className={`overflow-hidden bg-gradient-night ${view === "grid" ? "aspect-4/3" : "h-44 sm:h-full"}`}>
                       <img
                         src={productImage(p)}
                         alt={`${p.name}${p.model ? ` ${p.model}` : ""} — Janet LED fitting`}
                         loading="lazy"
-                        className="size-full object-contain p-5 transition-transform duration-700 group-hover:scale-105"
+                        className="size-full object-contain p-6 drop-shadow-[0_10px_28px_rgba(0,0,0,0.55)] transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
                   </Link>
@@ -313,7 +313,7 @@ function ProductsPage() {
               <img
                 src={productImage(quick)}
                 alt={quick.name}
-                className="w-full rounded-sm border border-border bg-surface object-contain p-6"
+                className="w-full rounded-sm border border-border bg-gradient-night object-contain p-6"
               />
               <div>
                 <h2 className="text-xl font-semibold">{quick.name}</h2>
