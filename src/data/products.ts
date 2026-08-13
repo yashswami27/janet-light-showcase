@@ -4739,3 +4739,12 @@ export const products: Product[] = [
     ]
   }
 ];
+
+export function productImage(p: { images: string[]; page: number }): string {
+  return p.images[0] ?? `/catalog/page-${String(p.page).padStart(2, "0")}.jpg`;
+}
+
+export function categoryImage(categoryId: string): string {
+  const p = products.find((x) => x.category === categoryId && x.images.length > 0);
+  return p ? p.images[0]! : "/catalog/page-03.jpg";
+}
