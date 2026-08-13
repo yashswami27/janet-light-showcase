@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, X, LayoutGrid, Rows3, Eye, SlidersHorizontal } from "lucide-react";
 import { useMemo, useState } from "react";
-import { categories, products, type Product } from "@/data/products";
-import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
+import { categories, products, productImage, type Product } from "@/data/products";
+import { EnquiryButtons } from "@/components/site/EnquiryButtons";
 import { AddToEnquiry } from "@/components/site/EnquiryList";
 import { Reveal } from "@/components/site/Reveal";
 
@@ -235,10 +235,10 @@ function ProductsPage() {
                   <Link to="/products/$productId" params={{ productId: p.id }} className="block">
                     <div className={`overflow-hidden bg-surface ${view === "grid" ? "aspect-4/3" : "h-44 sm:h-full"}`}>
                       <img
-                        src={pageImage(p.page)}
-                        alt={`${p.name} in the Janet catalog`}
+                        src={productImage(p)}
+                        alt={`${p.name}${p.model ? ` ${p.model}` : ""} — Janet LED fitting`}
                         loading="lazy"
-                        className="size-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                        className="size-full object-contain p-5 transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
                   </Link>
@@ -311,9 +311,9 @@ function ProductsPage() {
             </button>
             <div className="grid gap-6 p-6 sm:grid-cols-2">
               <img
-                src={pageImage(quick.page)}
-                alt={`${quick.name} catalog page`}
-                className="w-full rounded-sm border border-border object-cover object-top"
+                src={productImage(quick)}
+                alt={quick.name}
+                className="w-full rounded-sm border border-border bg-surface object-contain p-6"
               />
               <div>
                 <h2 className="text-xl font-semibold">{quick.name}</h2>
