@@ -276,12 +276,12 @@
 }
 
 @keyframes janet-ken-burns {
-  from { transform: scale(1.06); }
-  to { transform: scale(1.14); }
+  from { transform: scale(1.02); }
+  to { transform: scale(1.22); }
 }
 
 @utility animate-ken-burns {
-  animation: janet-ken-burns 14s ease-out forwards;
+  animation: janet-ken-burns 6.5s ease-out forwards;
 }
 
 @keyframes janet-fade-up {
