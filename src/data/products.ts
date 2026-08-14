@@ -365,7 +365,7 @@ export const products: Product[] = [
     "images": [
       "/products/floret__p04__img1.jpeg",
       "/products/floret__p17__img1.jpeg",
-      "/products/floret__p17__img2.jpeg"
+      "/products/floret__p17__img2.png"
     ],
     "tags": [
       "dimmable-tunable-range",
@@ -394,7 +394,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/adore-smart__p04__img1.jpeg"
+      "/products/adore-smart__p04__img1.png"
     ],
     "tags": [
       "dimmable-tunable-range",
@@ -521,7 +521,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/magnetic-track__p06__img1.jpeg",
+      "/products/magnetic-track__p06__img1.png",
       "/products/magnetic-track__p06__img2.png"
     ],
     "tags": [
@@ -615,10 +615,10 @@ export const products: Product[] = [
     "images": [
       "/products/m20__p08__img1.png",
       "/products/m20__p08__img2.png",
-      "/products/m20__p08__img3.jpeg",
+      "/products/m20__p08__img3.png",
       "/products/m20__p08__img4.png",
-      "/products/m20__p08__img5.jpeg",
-      "/products/m20__p08__img6.jpeg"
+      "/products/m20__p08__img5.png",
+      "/products/m20__p08__img6.png"
     ],
     "tags": [
       "magnetic-profile",
@@ -965,9 +965,9 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/cob-spot-light__p12__img1.jpeg",
-      "/products/cob-spot-light__p12__img2.jpeg",
-      "/products/cob-spot-light__p12__img3.jpeg"
+      "/products/cob-spot-light__p12__img1.png",
+      "/products/cob-spot-light__p12__img2.png",
+      "/products/cob-spot-light__p12__img3.png"
     ],
     "tags": [
       "led-cob-light",
@@ -1004,7 +1004,7 @@ export const products: Product[] = [
     "images": [
       "/products/polo__p12__img1.png",
       "/products/polo__p12__img2.png",
-      "/products/polo__p12__img3.jpeg"
+      "/products/polo__p12__img3.png"
     ],
     "tags": [
       "led-cob-light",
@@ -1043,7 +1043,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/sparkle__p13__img1.jpeg"
+      "/products/sparkle__p13__img1.png"
     ],
     "tags": [
       "led-cob-light",
@@ -1101,7 +1101,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/flora__p13__img1.jpeg"
+      "/products/flora__p13__img1.png"
     ],
     "tags": [
       "led-cob-light",
@@ -1245,9 +1245,9 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/amaze__p15__img1.jpeg",
-      "/products/amaze__p15__img2.jpeg",
-      "/products/amaze__p15__img3.jpeg"
+      "/products/amaze__p15__img1.png",
+      "/products/amaze__p15__img2.png",
+      "/products/amaze__p15__img3.png"
     ],
     "tags": [
       "led-button-cob-light",
@@ -1427,7 +1427,7 @@ export const products: Product[] = [
     ],
     "images": [
       "/products/jn-028__p17__img1.png",
-      "/products/jn-028__p17__img2.jpeg"
+      "/products/jn-028__p17__img2.png"
     ],
     "tags": [
       "led-panel-light",
@@ -1529,9 +1529,9 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/jn-018__p18__img1.jpeg",
+      "/products/jn-018__p18__img1.png",
       "/products/jn-018__p18__img2.png",
-      "/products/jn-018__p18__img3.jpeg"
+      "/products/jn-018__p18__img3.png"
     ],
     "tags": [
       "led-panel-light-surface-led-light",
@@ -1745,7 +1745,7 @@ export const products: Product[] = [
     "images": [
       "/products/tulip__p21__img1.png",
       "/products/tulip__p21__img2.png",
-      "/products/tulip__p21__img3.jpeg"
+      "/products/tulip__p21__img3.png"
     ],
     "tags": [
       "surface-led-light-surface-led-cob-light",
@@ -1803,7 +1803,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/h1077__p21__img1.jpeg"
+      "/products/h1077__p21__img1.png"
     ],
     "tags": [
       "surface-led-light-surface-led-cob-light",
@@ -1867,7 +1867,7 @@ export const products: Product[] = [
     "images": [
       "/products/crysta__p22__img1.png",
       "/products/crysta__p22__img2.png",
-      "/products/crysta__p22__img3.jpeg"
+      "/products/crysta__p22__img3.png"
     ],
     "tags": [
       "surface-led-light-surface-led-cob-light",
@@ -1949,7 +1949,7 @@ export const products: Product[] = [
     ],
     "images": [
       "/products/stella__p23__img1.png",
-      "/products/stella__p23__img2.jpeg"
+      "/products/stella__p23__img2.png"
     ],
     "tags": [
       "surface-led-movable-cylinder-light-open-cabinet-light",
@@ -1976,7 +1976,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/1089r__p23__img1.jpeg"
+      "/products/1089r__p23__img1.png"
     ],
     "tags": [
       "surface-led-movable-cylinder-light-open-cabinet-light",
@@ -2148,7 +2148,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/8071sq__p25__img1.jpeg"
+      "/products/8071sq__p25__img1.png"
     ],
     "tags": [
       "led-track-light-conceal-foot-light",
@@ -2389,7 +2389,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/dfc-1020__p28__img1.jpeg"
+      "/products/dfc-1020__p28__img1.png"
     ],
     "tags": [
       "gate-light",
@@ -2591,7 +2591,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/dfc-1021__p31__img1.jpeg"
+      "/products/dfc-1021__p31__img1.png"
     ],
     "tags": [
       "bollard-led-light",
@@ -2697,7 +2697,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/shw-202305__p32__img1.jpeg"
+      "/products/shw-202305__p32__img1.png"
     ],
     "tags": [
       "outdoor-led-wall-light",
@@ -2751,7 +2751,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/mk-3101f__p33__img1.jpeg"
+      "/products/mk-3101f__p33__img1.png"
     ],
     "tags": [
       "outdoor-led-wall-light",
@@ -3025,7 +3025,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/btf-028-2w__p36__img1.jpeg"
+      "/products/btf-028-2w__p36__img1.png"
     ],
     "tags": [
       "outdoor-led-wall-light",
@@ -3052,7 +3052,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/btf-028-4w__p37__img1.jpeg"
+      "/products/btf-028-4w__p37__img1.png"
     ],
     "tags": [
       "outdoor-led-wall-light",
@@ -3313,7 +3313,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/jn-ol-120__p40__img1.jpeg"
+      "/products/jn-ol-120__p40__img1.png"
     ],
     "tags": [
       "outdoor-led-wall-light-spike-light",
@@ -3680,7 +3680,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/smd-2835-120-rope__p44__img1.jpeg"
+      "/products/smd-2835-120-rope__p44__img1.png"
     ],
     "tags": [
       "led-profile-hanging-led-rope-light",
@@ -3727,7 +3727,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/smd-2835-144-rope__p45__img1.jpeg"
+      "/products/smd-2835-144-rope__p45__img1.png"
     ],
     "tags": [
       "led-rope-light-led-strip-light",
@@ -4048,7 +4048,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/240-lamp-10mm-black__p46__img1.jpeg"
+      "/products/240-lamp-10mm-black__p46__img1.png"
     ],
     "tags": [
       "led-rope-light-led-strip-light",
@@ -4099,8 +4099,8 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/smps-standard__p47__img1.jpeg",
-      "/products/smps-standard__p47__img2.jpeg"
+      "/products/smps-standard__p47__img1.png",
+      "/products/smps-standard__p47__img2.png"
     ],
     "tags": [
       "smps-for-led-strip-light",
@@ -4214,9 +4214,9 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/surface-silicon__p48__img1.jpeg",
+      "/products/surface-silicon__p48__img1.png",
       "/products/surface-silicon__p48__img2.jpeg",
-      "/products/surface-silicon__p48__img3.jpeg"
+      "/products/surface-silicon__p48__img3.png"
     ],
     "tags": [
       "silicon-profile",
@@ -4255,7 +4255,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/silicon-220v__p48__img1.jpeg"
+      "/products/silicon-220v__p48__img1.png"
     ],
     "tags": [
       "silicon-profile",
@@ -4282,7 +4282,7 @@ export const products: Product[] = [
       ]
     ],
     "images": [
-      "/products/silicon-24v__p48__img1.jpeg",
+      "/products/silicon-24v__p48__img1.png",
       "/products/silicon-24v__p48__img2.png"
     ],
     "tags": [
