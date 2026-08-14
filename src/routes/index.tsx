@@ -16,7 +16,7 @@ import trackImage from "@/assets/showcase-track.jpg";
 import outdoorImage from "@/assets/showcase-outdoor.jpg";
 import { categories, products, categoryImage } from "@/data/products";
 import { company } from "@/data/company";
-import { EnquiryButtons, pageImage } from "@/components/site/EnquiryButtons";
+import { EnquiryButtons } from "@/components/site/EnquiryButtons";
 import { Reveal, CountUp } from "@/components/site/Reveal";
 import { HeroSlider, defaultSlides } from "@/components/site/HeroSlider";
 import {
