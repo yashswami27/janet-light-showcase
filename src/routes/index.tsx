@@ -235,7 +235,7 @@ function HomePage() {
             {applications.map((a, i) => (
               <Reveal key={a.title} delay={(i % 3) * 90}>
                 <article className="group relative h-full overflow-hidden rounded-sm border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur transition-colors hover:border-primary-foreground/35">
-                  <div className="aspect-16/10 overflow-hidden bg-primary-foreground/5">
+                  <div className="aspect-16/10 overflow-hidden bg-gradient-night">
                     <img
                       src={categoryImage(a.category)}
                       alt={`${a.title} lighting by Janet`}
