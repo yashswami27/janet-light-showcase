@@ -221,7 +221,7 @@ function HomePage() {
       </section>
 
       {/* ---------------- Applications ---------------- */}
-      <section className="mt-10 bg-gradient-night py-20">
+      <section className="mt-10 bg-brand-deep py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Reveal>
             <h2 className="max-w-2xl text-3xl font-semibold tracking-tight text-primary-foreground sm:text-4xl">
@@ -235,12 +235,12 @@ function HomePage() {
             {applications.map((a, i) => (
               <Reveal key={a.title} delay={(i % 3) * 90}>
                 <article className="group relative h-full overflow-hidden rounded-sm border border-primary-foreground/15 bg-primary-foreground/5 backdrop-blur transition-colors hover:border-primary-foreground/35">
-                  <div className="aspect-16/10 overflow-hidden">
+                  <div className="aspect-16/10 overflow-hidden bg-primary-foreground/5">
                     <img
-                      src={pageImage(a.page)}
-                      alt={`${a.title} lighting from the Janet catalog`}
+                      src={categoryImage(a.category)}
+                      alt={`${a.title} lighting by Janet`}
                       loading="lazy"
-                      className="size-full object-cover object-top opacity-80 transition-all duration-700 group-hover:scale-105 group-hover:opacity-100"
+                      className="size-full object-contain p-6 transition-transform duration-700 group-hover:scale-105"
                     />
                   </div>
                   <div className="p-5">
