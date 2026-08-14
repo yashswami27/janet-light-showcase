@@ -56,12 +56,12 @@ const highlights = [
 const chipBrands = ["OSRAM", "CREE", "PHILIPS", "BRIDGELUX", "SAMSUNG LED", "EPISTAR", "MEAN WELL"];
 
 const applications = [
-  { title: "Residential", text: "Living rooms, bedrooms, false-ceiling coves and wardrobes.", page: 11 },
-  { title: "Retail & showroom", text: "Magnetic track and COB spots with crisp beam control.", page: 6 },
-  { title: "Office & workspace", text: "Panel, surface and linear fittings with low-glare optics.", page: 17 },
-  { title: "Hospitality", text: "Warm, dimmable and colour-tunable layered lighting.", page: 4 },
-  { title: "Outdoor & facade", text: "Bollards, spike lights, wall washers and bulkheads.", page: 33 },
-  { title: "Architectural detail", text: "Silicon and aluminium profiles for seamless strip lighting.", page: 49 },
+  { title: "Residential", text: "Living rooms, bedrooms, false-ceiling coves and wardrobes.", category: "indoor-lights-down-lights" },
+  { title: "Retail & showroom", text: "Magnetic track and COB spots with crisp beam control.", category: "indoor-lights-magnetic-track-lights" },
+  { title: "Office & workspace", text: "Panel, surface and linear fittings with low-glare optics.", category: "indoor-lights-panel-lights" },
+  { title: "Hospitality", text: "Warm, dimmable and colour-tunable layered lighting.", category: "indoor-lights-spot-lights" },
+  { title: "Outdoor & facade", text: "Bollards, spike lights, wall washers and bulkheads.", category: "outdoor-lights-garden-bollard" },
+  { title: "Architectural detail", text: "Silicon and aluminium profiles for seamless strip lighting.", category: "indoor-lights-profile" },
 ];
 
 const process = [
