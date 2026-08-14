@@ -4,7 +4,7 @@ import { useState } from "react";
 import { company, hasContact, telLink, whatsappLink } from "@/data/company";
 import { EnquiryListTrigger } from "@/components/site/EnquiryList";
 import { categories } from "@/data/products";
-import janetLogo from "@/assets/janet-logo-dark.png.asset.json";
+import janetLogo from "@/assets/janet-logo.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
