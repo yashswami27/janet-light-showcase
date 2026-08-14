@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
+import { useState } from "react";
 import { categories, products, productImage, type Category } from "@/data/products";
 import { EnquiryButtons } from "@/components/site/EnquiryButtons";
 
@@ -44,6 +45,12 @@ function ProductDetail() {
   const { product } = Route.useLoaderData();
   const category = categories.find((c: Category) => c.id === product.category);
   const related = products.filter((p) => p.category === product.category && p.id !== product.id).slice(0, 3);
+  const gallery: string[] = product.images.length > 0 ? product.images : [productImage(product)];
+  const [active, setActive] = useState(0);
+  const wattOptions = product.variants
+    .map((row: string[], i: number) => ({ watt: row[0] ?? "—", i }))
+    .filter((v: { watt: string }) => /\d/.test(v.watt));
+  const imageForVariant = (i: number) => Math.min(i, gallery.length - 1);
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
@@ -55,18 +62,48 @@ function ProductDetail() {
         <div>
           <div className="overflow-hidden rounded-sm border border-border bg-gradient-night">
             <img
-              src={productImage(product)}
+              src={gallery[active] ?? gallery[0]}
               alt={`${product.name}${product.model ? ` ${product.model}` : ""}`}
               className="aspect-4/3 w-full object-contain p-8"
             />
           </div>
-          {product.images.length > 1 && (
+          {gallery.length > 1 && (
             <div className="mt-3 grid grid-cols-4 gap-3">
-              {product.images.slice(1, 5).map((src: string) => (
-                <div key={src} className="overflow-hidden rounded-sm border border-border bg-gradient-night">
+              {gallery.slice(0, 8).map((src: string, i: number) => (
+                <button
+                  type="button"
+                  key={src}
+                  onClick={() => setActive(i)}
+                  aria-label={`View photo ${i + 1}`}
+                  className={`overflow-hidden rounded-sm border bg-gradient-night transition-colors ${i === active ? "border-primary" : "border-border hover:border-primary/50"}`}
+                >
                   <img src={src} alt={product.name} loading="lazy" className="aspect-square w-full object-contain p-2" />
-                </div>
+                </button>
               ))}
+            </div>
+          )}
+          {gallery.length > 1 && wattOptions.length > 1 && (
+            <div className="mt-4">
+              <p className="eyebrow text-muted-foreground">Sizes by wattage</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {wattOptions.map((v: { watt: string; i: number }) => {
+                  const target = imageForVariant(v.i);
+                  return (
+                    <button
+                      type="button"
+                      key={`${v.watt}-${v.i}`}
+                      onClick={() => setActive(target)}
+                      className={`rounded-sm border px-3 py-1.5 text-xs font-semibold transition-colors ${
+                        target === active
+                          ? "border-primary bg-primary text-primary-foreground"
+                          : "border-border text-foreground hover:border-primary/60"
+                      }`}
+                    >
+                      {v.watt}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           )}
         </div>
@@ -111,7 +148,11 @@ function ProductDetail() {
               </thead>
               <tbody>
                 {product.variants.map((row: string[], i: number) => (
-                  <tr key={i} className="border-t border-border">
+                  <tr
+                    key={i}
+                    onMouseEnter={() => setActive(imageForVariant(i))}
+                    className="border-t border-border transition-colors hover:bg-secondary/60"
+                  >
                     {product.specColumns.map((_: string, j: number) => (
                       <td key={j} className="whitespace-nowrap px-4 py-3 text-foreground">
                         {row[j] ?? "—"}
