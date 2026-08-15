@@ -52,10 +52,10 @@ export function Header() {
               height={120}
             />
             <span className="hidden border-l border-border pl-3 leading-tight sm:block">
-              <span className="block text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-foreground">
+              <span className="block text-[0.78rem] font-bold uppercase tracking-[0.2em] text-foreground">
                 {company.legalName}
               </span>
-              <span className="block text-[0.58rem] uppercase tracking-[0.22em] text-muted-foreground">
+              <span className="block text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
                 {company.city} · Since {company.establishedYear}
               </span>
             </span>
