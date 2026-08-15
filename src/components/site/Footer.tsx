@@ -47,8 +47,8 @@ export function Footer() {
             height={144}
             loading="lazy"
           />
-          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-brand-warm">
-            A brand of {company.legalName}
+          <p className="mt-5 text-base font-bold uppercase tracking-[0.18em] text-brand-warm">
+            A brand of <span className="text-primary-foreground">{company.legalName}</span>
           </p>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-primary-foreground/65">
             {company.city}, Gujarat. Professional LED down lights, spot lights,
