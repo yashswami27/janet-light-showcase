@@ -16,28 +16,33 @@ export const company = {
   establishedYear: 2013,
   city: "Ahmedabad",
 
-  /** Full shop address, one line per row. e.g. ["Shop 12, ABC Complex", "CG Road", "Ahmedabad, Gujarat 380009"] */
-  addressLines: [] as string[],
+  /** Full shop address, one line per row. */
+  addressLines: [
+    "1895, Gandhi Rd",
+    "Near Pada Pola, Old City",
+    "Tankshal, Kalupur",
+    "Ahmedabad, Gujarat 380001",
+  ] as string[],
 
-  /** Display phone number, e.g. "+91 98765 43210" */
-  phone: "",
+  /** Display phone number */
+  phone: "+91 76003 68576",
   /** Second phone number (optional) */
   phoneAlt: "",
-  /** WhatsApp number, digits with country code and no symbols, e.g. "919876543210" */
-  whatsapp: "",
-  /** Enquiry email, e.g. "sales@janetlights.com" */
-  email: "",
+  /** WhatsApp number, digits with country code and no symbols */
+  whatsapp: "917600368576",
+  /** Enquiry email */
+  email: "jayenterprise1895@yahoo.in",
 
-  /** e.g. "Mon – Sat, 10:00 AM – 8:00 PM" */
-  hours: "",
+  /** Working hours — shown in a concise, professional format. */
+  hours: "Mon – Sat: 10:30 AM – 8:00 PM  ·  Sunday: Closed",
   /** e.g. "24ABCDE1234F1Z5" */
   gst: "",
 
-  instagram: "",
+  instagram: "https://www.instagram.com/jayenterprise4214/",
   facebook: "",
 
   /** Google Maps embed URL (Share → Embed a map → copy the src="..." value) */
-  mapEmbedUrl: "",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8932992850394!2d72.6000!3d23.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzMyLjkiTiA3MsKwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1692000000000!5m2!1sen!2sin",
 };
 
 export const hasContact = {
