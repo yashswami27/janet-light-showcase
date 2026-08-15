@@ -43,7 +43,7 @@ export function Header() {
 
       <div className="border-b border-border bg-background/92 backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
-          <Link to="/" className="flex shrink-0 items-center" onClick={() => setOpen(false)}>
+          <Link to="/" className="flex shrink-0 items-center gap-3" onClick={() => setOpen(false)}>
             <img
               src={janetLogo.url}
               alt={`${company.brand} ${company.tagline} logo`}
@@ -51,6 +51,14 @@ export function Header() {
               width={200}
               height={120}
             />
+            <span className="hidden border-l border-border pl-3 leading-tight sm:block">
+              <span className="block text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-foreground">
+                {company.legalName}
+              </span>
+              <span className="block text-[0.58rem] uppercase tracking-[0.22em] text-muted-foreground">
+                {company.city} · Since {company.establishedYear}
+              </span>
+            </span>
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">

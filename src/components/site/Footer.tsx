@@ -1,8 +1,9 @@
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone, MessageCircle, Instagram, Facebook, Clock, ArrowRight } from "lucide-react";
+import { Mail, MapPin, Phone, MessageCircle, Instagram, Facebook, Clock, ArrowRight, Download } from "lucide-react";
 import { company, hasContact, mailtoLink, telLink, whatsappLink } from "@/data/company";
 import { categories } from "@/data/products";
 import janetLogo from "@/assets/janet-logo-dark.png.asset.json";
+import catalogPdf from "@/assets/janet-catalog.pdf.asset.json";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -19,12 +20,13 @@ export function Footer() {
             </h2>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Link
-              to="/catalog"
+            <a
+              href={catalogPdf.url}
+              download="Janet-Catalogue-2026.pdf"
               className="inline-flex items-center gap-2 rounded-sm bg-primary-foreground px-6 py-3.5 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-brand-deep transition-transform hover:-translate-y-0.5"
             >
-              View catalogue
-            </Link>
+              <Download className="size-3.5" aria-hidden /> Download catalogue
+            </a>
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 rounded-sm border border-primary-foreground/35 px-6 py-3.5 text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-primary-foreground/10"
@@ -45,8 +47,11 @@ export function Footer() {
             height={144}
             loading="lazy"
           />
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/65">
-            A brand of {company.legalName}, {company.city}. Professional LED down lights, spot lights,
+          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.2em] text-brand-warm">
+            A brand of {company.legalName}
+          </p>
+          <p className="mt-2 max-w-sm text-sm leading-relaxed text-primary-foreground/65">
+            {company.city}, Gujarat. Professional LED down lights, spot lights,
             track, panel and architectural lighting since {company.establishedYear}.
           </p>
           <div className="mt-5 flex gap-3">
