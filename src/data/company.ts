@@ -42,7 +42,7 @@ export const company = {
   facebook: "",
 
   /** Google Maps embed URL (Share → Embed a map → copy the src="..." value) */
-  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8932992850394!2d72.6000!3d23.0258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDAxJzMyLjkiTiA3MsKwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1692000000000!5m2!1sen!2sin",
+  mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.8!2d72.5938471!3d23.0250095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e8449fc03d933%3A0x7039e12bb885ea61!2sJay%20Enterprise!5e0!3m2!1sen!2sin!4v1692000000000!5m2!1sen!2sin",
 };
 
 export const hasContact = {
